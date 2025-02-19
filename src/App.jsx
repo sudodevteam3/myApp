@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route,Router,Routes, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
 import About from '../pages/About';
@@ -9,11 +9,13 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+       <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+      </Router>
    
     </> // Add a catch-all route for error handling
   )
